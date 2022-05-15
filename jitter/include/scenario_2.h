@@ -1,0 +1,20 @@
+#ifndef JITTER_SCENARIO_2_H
+#define JITTER_SCENARIO_2_H
+
+#include "scenario.h"
+
+/* TASK 1 PARAMS */
+#define TASK_1_PRIORITY_SCENARIO_2          0
+/* TASK 2 PARAMS */
+#define TASK_2_PRIORITY_SCENARIO_2          0
+/* PERIODIC TASK */
+#define PERIODIC_TASK_PRIORITY_SCENARIO_2   1
+
+/* NEED TO ENABLE TIME SLICING IN ZEPHYR*/
+
+void startJitterTestScenario_2()
+{
+    startJitterTestScenario(TASK_1_PRIORITY_SCENARIO_2 , TASK_2_PRIORITY_SCENARIO_2 , PERIODIC_TASK_PRIORITY_SCENARIO_2, "scenario_2");
+}
+
+#endif // JITTER_SCENARIO_2_H

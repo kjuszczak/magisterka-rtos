@@ -1,0 +1,69 @@
+STM32CubeWB
+###########
+
+Origin:
+   ST Microelectronics
+   http://www.st.com/en/embedded-software/stm32cubewb.html
+
+Status:
+   version v1.1.0
+
+Purpose:
+   ST Microelectronics official MCU package for STM32WL series.
+
+Description:
+   This package is an extract of official STM32CubeWL package written by ST Microelectronics.
+   It is composed of STM32Cube hardware abstraction layer (HAL) and low layer (LL) plus a set
+   of CMSIS headers files, one for each SoC in STM32WL series.
+
+Dependencies:
+    None.
+
+URL:
+   https://github.com/STMicroelectronics/STM32CubeWL
+
+Commit:
+   1555f88ae1c5898c239bd8a8520203a776ab4995
+
+Maintained-by:
+   External
+
+License:
+   BSD-3-Clause
+
+License Link:
+   https://opensource.org/licenses/BSD-3-Clause
+
+Patch List:
+
+   *Changes from official delivery:
+    -dos2unix applied
+    -trailing white spaces removed
+
+   *Provision to enable hal & ll asserts added
+    -Added stm32cube/stm32wlxx/drivers/include/stm32_assert.h
+    -Removed unused stm32cube/stm32wlxx/drivers/include/stm32_assert_template.h
+
+   *Disable SUBGHZ HAL
+    -Disable the SUBGHZ HAL module to avoid conflict with the Zephyr sx1262
+     register definitions.
+    Impacted files:
+     drivers/include/stm32wlxx_hal_conf.h
+
+   *Take into account HSEPRE value when configuring HSE as PLL input
+    Impacted file:
+     stm32cube/stm32wlxx/drivers/src/stm32wlxx_ll_utils.c
+    ST Internal reference: 111260
+
+   *Fix LL_SYSCFG_GetEXTISource which was not returning correct port
+    Impacted file:
+     stm32cube/stm32wlxx/drivers/src/stm32wlxx_ll_gpio.c
+    ST Internal reference: 121649
+
+   *Fix LL_PLL_ConfigSystemClock_MSI function which does not test correctly
+    the LL_RCC_MSI_IsEnabledRangeSelect when getting the MSI range
+    Impacted file: 
+     stm32cube/stm32wlxx/drivers/src/stm32wlxx_ll_util.c
+    ST Internal reference: 124139
+
+   See release_note.html from STM32Cube
