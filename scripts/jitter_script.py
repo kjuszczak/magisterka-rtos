@@ -20,8 +20,8 @@ os.system(cmd_build)
 
 means_rtos = []
 
-def getTestResult(rtos, scenario):    
-    ser = serial.Serial('/dev/ttyACM0', 115200, bytesize=serial.EIGHTBITS, parity=serial.PARITY_NONE, stopbits=serial.STOPBITS_ONE)
+def getTestResult(rtos, scenario):
+    ser = serial.Serial('/dev/ttyACM0', 115200, bytesize=serial.EIGHTBITS, parity=serial.PARITY_NONE, stopbits=serial.STOPBITS_ONE)    
     uart_data = ser.read(4000)
     data = []
     for i in range(0, 4000, 4):
@@ -35,7 +35,7 @@ def getTestResult(rtos, scenario):
     means_rtos.append(statistics.mean(plot_data))
 
     # open the file in the write mode
-    f = open('/mnt/c/Users/bezbe/Documents/jitter_popatrzymy/' + 'hist_jitter_' + scenario + '_' + rtos + '.csv', 'w')
+    f = open('/mnt/c/Users/bezbe/Documents/jitter/' + 'hist_jitter_' + scenario + '_' + rtos + '.csv', 'w')
 
     # create the csv writer
     writer = csv.writer(f)
@@ -46,23 +46,7 @@ def getTestResult(rtos, scenario):
     # close the file
     f.close()
 
-    # plt.hist(plot_data, bins=20)
-    # plt.title('Jitter - ' + rtos + " - " + scenario)
-    # plt.grid()
-    # plt.ylabel('Liczba próbek')
-    # plt.xlabel('Czas [ms]')
-    # plt.savefig('/mnt/c/Users/bezbe/Documents/jitter_popatrzymy/' + 'hist_jitter_' + scenario + '_' + rtos + '.png')
-    # plt.close()
-
-    # plt.plot(plot_data, 'o')
-    # plt.title('Jitter - ' + rtos + " - " + scenario)
-    # plt.grid()
-    # plt.ylabel('Czas [ms]')
-    # plt.xlabel('Numer iteracji')
-    # plt.savefig('/mnt/c/Users/bezbe/Documents/jitter_popatrzymy/' + 'plot_jitter_' + scenario + '_' + rtos + '.png')
-    # plt.close()
-
-scenario_name = 'Scenario_3'
+scenario_name = 'Scenario_2'
 
 os.system(cmd_flash_freertos)
 getTestResult('FreeRTOS', scenario_name)
@@ -73,4 +57,4 @@ getTestResult('Zephyr', scenario_name)
 os.system(cmd_flash_mbed_os)
 getTestResult('MBed-OS', scenario_name)
 
-print(means_rtos)
+# print(means_rtos)

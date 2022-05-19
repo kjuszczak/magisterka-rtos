@@ -7,10 +7,14 @@
 /* Jitter test */
 #include "jitter_test.h"
 
+/* MQTT test */
+#include "connection_time.h"
+
 void startRtosTest()
 {
-    // startJitterTest();
-    startRhealstoneBenchmark();
+    startJitterTest();
+    // startRhealstoneBenchmark();
+    // testMqtt();
 }
 
 #endif // TEST_SELECTION_H

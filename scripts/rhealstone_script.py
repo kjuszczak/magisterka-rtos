@@ -29,7 +29,7 @@ def plotData(rtos, scenario, data):
         plot_data.append(d)
 
     # open the file in the write mode
-    f = open('/mnt/c/Users/bezbe/Documents/rhealstone_popatrzymy/' + 'hist_rhealstone_' + scenario + '_' + rtos + '.csv', 'w')
+    f = open('/mnt/c/Users/bezbe/Documents/rhealstone/' + 'hist_rhealstone_' + scenario + '_' + rtos + '.csv', 'w')
 
     # create the csv writer
     writer = csv.writer(f)
@@ -39,19 +39,6 @@ def plotData(rtos, scenario, data):
 
     # close the file
     f.close()
-
-    # print(plot_data)
-    # plt.hist(plot_data[0], bins=5, label='FreeRTOS')
-    # plt.hist(plot_data[1], bins=5, label='Zephyr')
-    # plt.hist(plot_data[2], bins=5, label='MBed OS')
-    # plt.legend()
-    # plt.title(scenario)
-    # plt.grid()
-    # # plt.ylabel('Liczba próbek')
-    # plt.xlabel('Czas [us]')
-    # plt.savefig('/mnt/c/Users/bezbe/Documents/rhealstone/' + 'hist_rhealstone_' + scenario + '_' + rtos + '.png')
-    # plt.close()
-
 
 # scenario_name = 'Czas przesłania wiadomości pomiędzy zadaniami'
 scenario_name = 'scenario_6'

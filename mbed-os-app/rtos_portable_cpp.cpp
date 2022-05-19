@@ -111,7 +111,7 @@ void createPeriodicTaskCpp(TaskFunction task, uint16_t taskPeriod, uint32_t prio
     {
         timer[taskIndex].attach(&timerHandler_1, MBED_OS_1_MS * static_cast<float>(taskPeriod));
         event_thread.start(callback(&the_event_queue, &EventQueue::dispatch_forever));
-        event_thread.set_priority(static_cast<osPriority>(static_cast<uint32_t>(osPriorityRealtime) + priority));
+        event_thread.set_priority(static_cast<osPriority>(static_cast<uint32_t>(osPriorityNormal) + priority));
     }
     else
     {

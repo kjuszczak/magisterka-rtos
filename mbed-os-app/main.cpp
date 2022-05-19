@@ -10,10 +10,7 @@
 extern "C" {
 #include "board_config.h"
 #include "test_selection.h"
-#include "connection_time.h"
 }
-
-// #include "mqtt_portable_cpp.h"
 
 Thread thread;
 
@@ -33,11 +30,9 @@ int main()
 {
     board_config();
 
-    print("MBed OS\n");
+    // print("MBed OS\n");
 
     // thread.start(LedBlinky_Task);
 
-    // startRtosTest();
-
-    testMqtt();
+    startRtosTest();
 }

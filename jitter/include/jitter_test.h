@@ -4,12 +4,14 @@
 #include "scenario_1.h"
 #include "scenario_2.h"
 #include "scenario_3.h"
+#include "scenario_4.h"
 
 void startJitterTest()
 {
     // startJitterTestScenario_1();
-    // startJitterTestScenario_2();
-    startJitterTestScenario_3();
+    startJitterTestScenario_2();
+    // startJitterTestScenario_3();
+    // startJitterTestScenario_4();
 }
 
 #endif // JITTER_TEST_H

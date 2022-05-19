@@ -3,7 +3,7 @@
 
 #include "stdint.h"
 
-#define MAX_NUMBER_OF_TASKS             3
+#define MAX_NUMBER_OF_TASKS             5
 #define MAX_NUMBER_OF_PERIODIC_TASKS    2
 
 typedef void (* TaskFunction) ();

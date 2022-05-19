@@ -11,8 +11,6 @@
 
 #include "test_selection.h"
 
-#include "connection_time.h"
-
 #include "hal_it.h"
 
 #define MY_STACK_SIZE 500
@@ -41,9 +39,7 @@ void main(void)
 
     board_config();
 
-    print("Zephyr OS\n");
+    // print("Zephyr OS\n");
 
-    // startRtosTest();
-
-    testMqtt();
+    startRtosTest();
 }

@@ -8,8 +8,6 @@
 
 #include "TCPExample.h"
 
-#include "connection_time.h"
-
 /**
 * @brief    Task for blinking an LED every second
 * 
@@ -29,11 +27,9 @@ int main ( void )
 {
     board_config();
 
-    print("FreeRTOS\n");
+    // print("FreeRTOS\n");
 
-    // startRtosTest();
-
-    testMqtt();
+    startRtosTest();
 
     // xTaskCreate( LedBlinky_Task,						/* The function that implements the task. */
     //              "LedBlinky", 							/* The text name assigned to the task - for debug only as it is not used by the kernel. */

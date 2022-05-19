@@ -8,7 +8,7 @@
 /* INVERSE PRIORITY */
 #define TASK_PRIORITY_BASE      3
 
-TaskFunction tasks[MAX_NUMBER_OF_TASKS] = {NULL, NULL, NULL};
+TaskFunction tasks[MAX_NUMBER_OF_TASKS] = {NULL, NULL, NULL, NULL, NULL};
 
 /* TASK 1 */
 void zephyr_task_1(void *x, void *y, void *z)
@@ -41,7 +41,29 @@ K_THREAD_DEFINE(tid_task_3, STACK_SIZE,
                 INITIAL_PRIORITY, 0, -1);
 /****************************************************************/
 
-const k_tid_t* task_tid[MAX_NUMBER_OF_TASKS] = {&tid_task_1, &tid_task_2, &tid_task_3};
+/* TASK 4 */
+TaskFunction task_4;
+void zephyr_task_4(void *x, void *y, void *z)
+{
+    tasks[3](NULL);
+}
+K_THREAD_DEFINE(tid_task_4, STACK_SIZE,
+                zephyr_task_4, NULL, NULL, NULL,
+                INITIAL_PRIORITY, 0, -1);
+/****************************************************************/
+
+/* TASK 5 */
+TaskFunction task_5;
+void zephyr_task_5(void *x, void *y, void *z)
+{
+    tasks[4](NULL);
+}
+K_THREAD_DEFINE(tid_task_5, STACK_SIZE,
+                zephyr_task_5, NULL, NULL, NULL,
+                INITIAL_PRIORITY, 0, -1);
+/****************************************************************/
+
+const k_tid_t* task_tid[MAX_NUMBER_OF_TASKS] = {&tid_task_1, &tid_task_2, &tid_task_3, &tid_task_4, &tid_task_5};
 
 struct k_sem zephyr_sem;
 

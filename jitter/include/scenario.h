@@ -3,7 +3,7 @@
 
 #include "stdint.h"
 
-void startJitterTestScenario(uint8_t taskPriority_1, uint8_t taskPriority_2, uint8_t periodicTaskPriority, const char* testScenarioName);
+void startJitterTestScenario(uint8_t task1Priority, uint8_t restTasksPriority, uint8_t periodicTaskPriority, const char* testScenarioName);
 void addSecondPeriodicTask(uint8_t periodicTaskPriority);
 void printJitterTestResults();
 

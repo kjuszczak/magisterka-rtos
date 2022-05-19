@@ -4,7 +4,7 @@
 #define TEST_ITERATION      1000
 
 struct TestResults{
-    uint32_t testTime[TEST_ITERATION + 1];
+    uint32_t testTime[TEST_ITERATION];
     uint32_t testIteration;
 };
 

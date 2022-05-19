@@ -3,11 +3,13 @@
 
 #include "stdint.h"
 
-#define MAX_NUMBER_OF_TASKS             3
+#define MAX_NUMBER_OF_TASKS             5
 #define MAX_NUMBER_OF_PERIODIC_TASKS    2
 #define TASK_1_INDEX                    0
 #define TASK_2_INDEX                    1
 #define TASK_3_INDEX                    2
+#define TASK_4_INDEX                    3
+#define TASK_5_INDEX                    4
 
 typedef void (* TaskFunction) (void*);
 
